@@ -166,7 +166,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F7F2] text-[#1A1A1A] flex flex-col md:flex-row antialiased font-sans h-screen overflow-hidden print:min-h-0 print:h-auto print:w-full print:block print:bg-white print:m-0 print:p-0">
+    <div className="min-h-screen bg-[#F7F7F2] text-[#1A1A1A] flex flex-col md:flex-row antialiased font-sans h-screen overflow-hidden print:min-h-0 print:h-[148.5mm] print:w-[210mm] print:block print:bg-white print:m-0 print:p-0 print:overflow-hidden">
       {/* --- FORM SECTION (Hidden on print) --- */}
       <div className="w-full md:w-[400px] lg:w-[500px] bg-white border-r-[1px] border-[#1A1A1A] flex-shrink-0 flex flex-col h-full print:hidden overflow-y-auto">
         <div className="p-6 border-b-[1px] border-[#1A1A1A] flex items-center justify-between sticky top-0 z-10 bg-white">
@@ -387,12 +387,12 @@ export default function App() {
       </div>
 
       {/* --- PREVIEW SECTION (Visible on print) --- */}
-      <div className="flex-1 relative bg-[#DEDDCF] p-8 flex items-start justify-center overflow-auto print:static print:p-0 print:m-0 print:bg-white print:overflow-visible print:block print:w-full print:h-full z-0 print:z-50">
+      <div className="flex-1 relative bg-[#DEDDCF] p-8 flex items-start justify-center overflow-auto print:static print:p-0 print:m-0 print:bg-white print:overflow-visible print:block print:w-[210mm] print:h-[148.5mm] z-0">
         {/* Background Dot Pattern */}
         <div className="absolute inset-0 opacity-10 pointer-events-none print:hidden" style={{ backgroundImage: 'radial-gradient(#1A1A1A 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
 
         {/* Printable Paper Container */}
-        <div className="bg-white p-6 shadow-[30px_30px_0px_rgba(0,0,0,0.05)] border-[1px] border-gray-200 print:shadow-none print:border-none mx-auto w-[210mm] h-[148.5mm] print:mx-0 print:w-full print:h-[100vh] print:max-w-none print:m-0 print:p-[5mm] relative font-mono text-[11px] leading-tight text-black z-10 flex flex-col box-border">
+        <div className="bg-white p-6 shadow-[30px_30px_0px_rgba(0,0,0,0.05)] border-[1px] border-gray-200 print:shadow-none print:border-none mx-auto w-[210mm] h-[148.5mm] print:mx-0 print:w-[210mm] print:h-[148.5mm] print:max-w-none print:m-0 print:p-[4mm] relative font-mono text-[11px] leading-tight text-black z-10 flex flex-col box-border">
           
           <div className="flex-1 flex flex-col">
             {/* --- HEADER --- */}
@@ -505,15 +505,21 @@ export default function App() {
         <style dangerouslySetInnerHTML={{__html: `
           @media print {
             @page {
-              size: 210mm 148.5mm; /* Explicitly horizontal A5 */
-              margin: 0;
+              size: 210mm 148.5mm;
+              margin: 0 !important;
+            }
+            html, body, #root {
+              margin: 0 !important;
+              padding: 0 !important;
+              width: 210mm !important;
+              height: 148.5mm !important;
+              overflow: hidden !important;
+              background: white !important;
             }
             body {
               -webkit-print-color-adjust: exact;
               print-color-adjust: exact;
-              background-color: white !important;
             }
-            /* Override tailwind default print hiding if necessary for specific dashed borders */
             .border-dashed {
               border-style: dashed !important;
             }

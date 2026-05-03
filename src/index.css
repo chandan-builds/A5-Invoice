@@ -1,7 +1,19 @@
 @import "tailwindcss";
 
-/* Landscape print orientation */
+/* Print: force zero margins everywhere */
 @page {
-  size: A5 landscape;
-  margin: 0;
+  size: 210mm 148.5mm;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+@media print {
+  html, body, #root {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 210mm !important;
+    height: 148.5mm !important;
+    overflow: hidden !important;
+    background: white !important;
+  }
 }
