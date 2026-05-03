@@ -393,7 +393,7 @@ export default function App() {
 
         {/* Printable Paper Container */}
         {/* Simulating A5 Landscape/Computer Form width, roughly 210mm x 148.5mm */}
-        <div className="bg-white p-6 shadow-[30px_30px_0px_rgba(0,0,0,0.05)] border-[1px] border-gray-200 print:shadow-none print:border-none mx-auto w-[210mm] min-h-[148.5mm] print:min-h-full print:w-full print:max-w-none print:m-0 print:p-[5mm] relative font-mono text-[11px] leading-tight text-black z-10 flex flex-col box-border">
+        <div className="bg-white p-6 shadow-[30px_30px_0px_rgba(0,0,0,0.05)] border-[1px] border-gray-200 print:shadow-none print:border-none mx-auto w-[210mm] h-[148.5mm] print:w-[210mm] print:h-[148.5mm] print:max-w-none print:m-0 print:p-[5mm] relative font-mono text-[11px] leading-tight text-black z-10 flex flex-col box-border">
           
           <div className="flex-1 flex flex-col">
             {/* --- HEADER --- */}
@@ -507,7 +507,7 @@ export default function App() {
           @media print {
             @page {
               size: 210mm 148.5mm; /* Explicitly horizontal A5 */
-              margin: 5mm;
+              margin: 0;
             }
             body {
               -webkit-print-color-adjust: exact;
