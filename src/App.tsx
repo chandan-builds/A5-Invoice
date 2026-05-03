@@ -148,7 +148,15 @@ export default function App() {
   };
 
   const handlePrint = () => {
+    // Set the document title for the PDF filename
+    const originalTitle = document.title;
+    document.title = 'A5-Invoice';
+    
+    // Trigger print dialog
     window.print();
+    
+    // Restore original title after print
+    document.title = originalTitle;
   };
 
   // Helper for formatting numbers exactly as requested
