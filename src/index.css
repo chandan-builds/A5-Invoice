@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+/* Landscape print orientation */
+@page {
+  size: A5 landscape;
+  margin: 0;
+}
