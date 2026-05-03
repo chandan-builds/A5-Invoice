@@ -1,6 +1,6 @@
 {
-  "name": "Invoice Generator Pro",
-  "description": "Generate A5 printable invoices and credit notes with automated calculations and a retro dot-matrix aesthetic.",
+  "name": "A5 Invoice",
+  "description": "Professional invoice management application for creating, editing, and printing invoices with detailed line items and automated calculations.",
   "requestFramePermissions": [],
   "majorCapabilities": []
 }
